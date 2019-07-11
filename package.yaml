@@ -1,0 +1,56 @@
+name:                prmon
+version:             0.1.0.0
+synopsis:            Do some stuff
+description:         This is my description
+homepage:            https://github.com/githubuser/prmon#readme
+license:             BSD3
+author:              Eric Stolten
+maintainer:          stoltene2@gmail.com
+copyright:           2018 Eric Stolten
+category:            Web
+extra-source-files:
+  - README.md
+
+dependencies:
+  - base        >= 4.7     && < 5
+  - aeson       >= 1.2.0.0 && < 1.3.0.0
+  - fast-logger >= 2.4.11  && < 2.5.0
+  - text        >= 1.2.0   && < 1.3.0
+  - yaml        >= 0.8     && < 0.9
+  - lens        >= 4.16.1  && < 4.17
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wredundant-constraints
+
+default-extensions:
+  - FlexibleContexts
+  - OverloadedStrings
+
+executables:
+  prmon:
+    source-dirs:      app
+    main:             Main.hs
+    dependencies:
+      - prmon
+      - aeson >= 1.2.0.0 && < 1.3.0.0
+      - directory >= 1.3.0 && < 1.4.0
+      - filepath >= 1.4.1 && < 1.5.0
+      - yaml >= 0.8 && < 0.9
+      - containers >= 0.5.10.2 && < 0.6.0.0
+
+
+library:
+  source-dirs: lib
+  exposed-modules:
+    - Bitbucket
+    - Bitbucket.Api
+    - Logger
+
+  dependencies:
+    - wreq >= 0.5.2.1 && < 0.6.0.0
+    - lens
+    - lens-aeson

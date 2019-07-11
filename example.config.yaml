@@ -1,0 +1,9 @@
+# Example configuration file for ~/.config/prmon/config.yaml
+authToken: custom-token
+endpoint: https://server/rest/api/1.0/projects/<project-name>/repos/<repo>/pull-requests
+
+# PRs I'm the author of
+# endpoint:  https://server/rest/api/latest/inbox/pull-requests?role=author&start=0&limit=300&avatarSize=64&withAttributes=true&state=OPEN
+
+# PRs in my inbox
+#endpoint:  https://server/rest/api/latest/inbox/pull-requests?start=0&limit=300&withAttributes=true&state=OPEN
